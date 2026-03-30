@@ -78,7 +78,7 @@ async function migrate() {
       category        VARCHAR(100),
       deep_dive_available BOOLEAN DEFAULT FALSE,
       unlock_price_cents  INTEGER DEFAULT 0,
-      verified_by     UUID REFERENCES verifications(verification_id) ON DELETE SET NULL,
+      verified_by     UUID,
       created_at      TIMESTAMPTZ DEFAULT NOW()
     );
     CREATE INDEX IF NOT EXISTS idx_events_property   ON property_events (property_id);
